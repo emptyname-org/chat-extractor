@@ -1,12 +1,11 @@
 # Chat Extractor for Signal
 
-Chat Extractor for Signal is an offline Rust/GTK app that extracts selected chats from a Signal Desktop export. All processing stays local.
+Chat Extractor for Signal extracts selected conversations from Signal Desktop exports as Markdown or JSON, with optional media.
 
 This independent project is not affiliated with Signal Messenger LLC.
 
 ## Features
 
-- Reads Signal Desktop exports without uploading data.
 - Selects one or more chats, with name filtering and sorting.
 - Exports an inclusive date range.
 - Writes Markdown or JSON as separate files or one combined file.
