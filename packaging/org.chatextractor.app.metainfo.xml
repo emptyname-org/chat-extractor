@@ -5,6 +5,7 @@
   <summary>Extract selected chats from a Signal export</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>CC0-1.0</project_license>
+  <url type="homepage">https://github.com/emptyname-org/chat-extractor</url>
   <launchable type="desktop-id">org.chatextractor.app.desktop</launchable>
   <provides>
     <binary>chatextractor</binary>
