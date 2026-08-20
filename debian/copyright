@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Chat Extractor for Signal
+
+Files: *
+Copyright: none
+License: CC0-1.0
+ Free as Air Licence: https://emptyname.org/faal/
+ .
+ This work is released under CC0 1.0 Universal to the maximum extent permitted
+ by law. Where CC0 does not reach, the same intent governs: no rights reserved.

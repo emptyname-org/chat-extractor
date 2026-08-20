@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/signal_filter/icons/scalable/apps">
+    <file alias="signal-filter.svg">signal-chat-export-icon.svg</file>
+  </gresource>
+</gresources>

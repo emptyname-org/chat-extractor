@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Chat Extractor for Signal
+Comment=Extract selected chats from a Signal export
+Exec=chatextractor
+Icon=chatextractor
+Terminal=false
+Categories=Utility;GTK;
+Keywords=Signal;Chat;Export;Archive;
+StartupNotify=true

@@ -1,0 +1,16 @@
+/target/
+/dist/
+*.tmp
+.signal-filter-*
+/debian/.debhelper/
+/debian/chatextractor/
+/debian/cargo-home/
+/debian/debhelper-build-stamp
+/debian/files
+/debian/*.debhelper
+/debian/*.substvars
+*.build
+*.buildinfo
+*.changes
+*.deb
+*.crate

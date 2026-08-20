@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+export CARGO_HOME = $(CURDIR)/debian/cargo-home
+export RUSTFLAGS = --remap-path-prefix=$(CURDIR)=.
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	cargo build --release --locked
+
+override_dh_auto_test:
+	cargo test --all-targets
+
+override_dh_auto_install:
+	install -Dm0755 target/release/chatextractor debian/chatextractor/usr/bin/chatextractor
+	install -Dm0644 packaging/org.chatextractor.app.desktop debian/chatextractor/usr/share/applications/org.chatextractor.app.desktop
+	install -Dm0644 packaging/org.chatextractor.app.metainfo.xml debian/chatextractor/usr/share/metainfo/org.chatextractor.app.metainfo.xml
+	install -Dm0644 assets/signal-chat-export-icon.svg debian/chatextractor/usr/share/icons/hicolor/scalable/apps/chatextractor.svg

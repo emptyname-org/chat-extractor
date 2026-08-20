@@ -1,0 +1,14 @@
+Source: chatextractor
+Section: utils
+Priority: optional
+Maintainer: Chat Extractor for Signal contributors <contributors@invalid.example>
+Build-Depends: debhelper-compat (= 13), cargo, rustc (>= 1.95), libgtk-4-dev (>= 4.8), libglib2.0-dev, pkg-config
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+
+Package: chatextractor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: offline chat extractor for Signal exports
+ Select chats from a Signal Desktop plaintext export by date and write Markdown
+ or JSON. Referenced media can be copied. Processing stays local.

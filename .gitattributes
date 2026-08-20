@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.png binary
+*.svg text eol=lf
+debian/rules text eol=lf
+packaging/*.sh text eol=lf
+scripts/*.sh text eol=lf

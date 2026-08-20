@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-package:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes appstream desktop-file-utils libgtk-4-dev pkg-config xvfb
+
+      - name: Select the supported Rust toolchain
+        run: |
+          rustup toolchain install 1.95.0 --profile minimal --component clippy,rustfmt
+          rustup default 1.95.0
+
+      - name: Install dependency auditor
+        run: cargo install cargo-audit --locked --version 0.22.2
+
+      - name: Audit publishable source
+        run: make source-audit
+
+      - name: Check, test, and audit
+        run: |
+          make lint
+          make test
+          make audit
+
+      - name: Build and validate Debian package
+        run: make validate-package
+
+      - name: Upload Debian package
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          path: dist/*.deb
+          archive: false
