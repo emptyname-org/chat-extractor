@@ -22,53 +22,17 @@ This independent project is not affiliated with Signal Messenger LLC.
 - Creates owner-only output on Unix.
 - Uses a four-step installer-style workflow.
 
-## Requirements
+## Install
 
-- Rust toolchain
-- GTK 4.8+ development files
-- `pkg-config`
-- `xvfb-run` (for GTK tests)
-
-On Debian or Ubuntu, install the system packages with:
-
-```sh
-sudo apt install libgtk-4-dev pkg-config xvfb
-```
-
-Run this yourself; the project never invokes `sudo`.
-
-## Run
-
-From the repository root:
-
-```sh
-cargo run --release
-```
-
-Or build and run the local binary:
-
-```sh
-make build
-./dist/chatextractor
-```
-
-## Debian package
-
-Download the current AMD64 Debian/Ubuntu package from the
-[latest release](https://github.com/emptyname-org/chat-extractor/releases/latest), then install it:
+For 64-bit Intel/AMD Debian or Ubuntu, download
+[chatextractor_0.1.0-1_amd64.deb](https://github.com/emptyname-org/chat-extractor/releases/latest/download/chatextractor_0.1.0-1_amd64.deb).
+Open the downloaded file with your package installer, or run this in its folder:
 
 ```sh
 sudo apt install ./chatextractor_0.1.0-1_amd64.deb
 ```
 
-Run this yourself. To build the package locally:
-
-```sh
-make deb
-make validate-package
-```
-
-The package is written to `dist/`. Other architectures use the matching package from `make deb`.
+Then open **Chat Extractor for Signal** from the applications menu.
 
 ## Workflow
 
@@ -81,29 +45,26 @@ In Signal Desktop, open **Settings → Chats → Export chat history**, choose a
 
 Media goes in a sibling `<output-name>-media` folder. Combined exports use numbered media subfolders to prevent name collisions. Single or separate files default to `<chat-name>-YYYY-MM-DD`; combined files use `N-conversations-YYYY-MM-DD`. Save suggestions are editable; separate files use each chat name and last-message date.
 
-## Development
+## Build from source
+
+Building requires Rust, GTK 4.8 development files, `pkg-config`, and `xvfb-run`
+for GTK tests. On Debian or Ubuntu:
 
 ```sh
+sudo apt install libgtk-4-dev pkg-config xvfb
 make build
+./dist/chatextractor
+```
+
+Project checks:
+
+```sh
 make test
 make lint
 make audit
 make source-audit
 make validate-package
 ```
-
-Streaming I/O scans the archive once per export. Output is built in a private staging folder. Existing files move only after all new output is complete and are restored on failure. Staging data is always removed.
-
-## Preparing a public repository
-
-The source audit checks an allowlist and rejects unexpected files and private-machine paths without printing matches. Run it before staging or publishing:
-
-```sh
-make source-audit
-git status --short
-```
-
-Use only synthetic test fixtures. Never add real Signal exports, media, preferences, logs, `.env` files, credentials, or generated `target/` or `dist/` content. CI repeats source, test, lint, dependency, and package checks.
 
 ## License
 
