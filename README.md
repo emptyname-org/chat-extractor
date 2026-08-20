@@ -54,20 +54,21 @@ make build
 
 ## Debian package
 
-Build and validate a local `.deb`:
+Download the current AMD64 Debian/Ubuntu package from the
+[latest release](https://github.com/emptyname-org/chat-extractor/releases/latest), then install it:
+
+```sh
+sudo apt install ./chatextractor_0.1.0-1_amd64.deb
+```
+
+Run this yourself. To build the package locally:
 
 ```sh
 make deb
 make validate-package
 ```
 
-The package is written to `dist/`. On AMD64 Debian or Ubuntu, install it with:
-
-```sh
-sudo apt install ./dist/chatextractor_0.1.0-1_amd64.deb
-```
-
-Run this yourself. Other architectures use the matching package from `make deb`.
+The package is written to `dist/`. Other architectures use the matching package from `make deb`.
 
 ## Workflow
 
