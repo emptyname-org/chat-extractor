@@ -1,6 +1,6 @@
 # Chat Extractor for Signal
 
-Chat Extractor for Signal extracts selected conversations from Signal Desktop exports as Markdown or JSON, with optional media.
+Chat Extractor for Signal is a Linux app for extracting selected chats from Signal Desktop exports as Markdown or JSON, with optional media.
 
 This independent project is not affiliated with Signal Messenger LLC.
 
