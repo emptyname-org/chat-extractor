@@ -6,21 +6,11 @@ This independent project is not affiliated with Signal Messenger LLC.
 
 ## Features
 
-- Uses native GTK controls, theme, and fonts.
-- Guides Signal Desktop export creation.
-- Finds `main.jsonl` in the selected folder.
-- Remembers the last source and destination folders locally.
-- Hides empty contacts and chats containing only one technical update.
-- Filters chat names and sorts by Name, Messages, or Date.
-- Offers checkboxes plus filtered Select all and Select none actions.
-- Uses `YYYY-MM-DD` fields with optional GTK calendars.
-- Exports Markdown or JSON with optional media.
-- Defaults to one file per chat; combined export is optional.
-- Suggests filenames from each chat and last-message date.
-- Confirms replacements and installs them transactionally.
-- Prevents media-name collisions between outputs.
-- Creates owner-only output on Unix.
-- Uses a four-step installer-style workflow.
+- Reads Signal Desktop exports without uploading data.
+- Selects one or more chats, with name filtering and sorting.
+- Exports an inclusive date range.
+- Writes Markdown or JSON as separate files or one combined file.
+- Optionally copies referenced media alongside the export.
 
 ## Install
 
